@@ -3,11 +3,7 @@ public class recursion {
         if(n <= 5){
             System.out.println(n);
             func(n+1);
-            
-
         }
-
-
 
     }
     public static void main(String[] args) {
