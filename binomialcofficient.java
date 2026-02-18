@@ -20,6 +20,7 @@ public class binomialcofficient {
         int c = 5;
         int r = 2;
         cofficient(c, r);
+        System.out.println();
 
 
         
