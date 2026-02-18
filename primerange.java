@@ -14,11 +14,19 @@ public class primerange {
         System.out.println(n);
         return ;
     }
-    public static void main(String[] args) {
 
-        for(int i = 1;i<=10;i++){
+    public static void range(int n){
+
+        for(int i = 1;i<=n;i++){
             CheckPrime(i);
         }
+        return;
+    }
+    public static void main(String[] args) {
+
+
+        range(14);
+
 
             
     }
