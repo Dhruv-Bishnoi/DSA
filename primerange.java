@@ -1,18 +1,18 @@
 public class primerange {
 
-    public static int CheckPrime(int n){
+    public static void CheckPrime(int n){
         if(n==1){
-            return n;
+            return;
         }
 
         for(int i = 2 ; i<=Math.sqrt(n);i++){
             if(n%i==0){
-                return n;
+                return ;
             }
             
         }
         System.out.println(n);
-        return n;
+        return ;
     }
     public static void main(String[] args) {
 
