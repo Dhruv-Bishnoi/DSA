@@ -14,8 +14,7 @@ public class binTodec {
         System.out.println(dec);
     }
     public static void main(String[] args) {
-
-        binaryTodec(101);
+        binaryTodec(110);
         
     }
 }
