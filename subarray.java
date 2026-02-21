@@ -30,7 +30,7 @@ public class subarray {
         }
         System.out.println("total subarray " + ts);
         System.out.println("largest sum of array is " + max_sum);
-        System.out.println("smalest sum of array is " + min_sum);
+        System.out.println("smallest sum of array is " + min_sum);
 
     }
 }
