@@ -1,6 +1,6 @@
 public class subarray {
     public static void main(String[] args) {
-        int arry[] = { 1, 2, 3, 4, 5 };
+        int arry[] = {  -2,1,-3,4,-1,2,1,-5,4 };
         int ts = 0;
         int sumofarrry = 0;
         int min_sum = Integer.MAX_VALUE;
