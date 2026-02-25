@@ -1,45 +1,49 @@
 public class rotatedarray {
 
-    public static int search(int num[] , int target){
+    public static int search(int nums[], int target) {
 
-        int left =0;
-        int right = num.length-1;
+        
+        int left = 0;
+        int right = nums.length - 1;
 
-        while (left<=right) {
-            int mid = (left+right)/2;
+        while(left <= right){
 
-            if(num[mid]==target){
+            int mid = (left + right) / 2;
+
+            if(nums[mid] == target){
                 return mid;
             }
 
-        // target can not be in left side
-            if (num[left]>num[right]) {
+            if(nums[left] <= nums[mid]){
 
-                if(num[left]<target&&target<mid){
-                    right =mid-1;
+                if(target >= nums[left] && target < nums[mid]){
+                    right = mid - 1;
                 }
-                right =mid-1;
+                else{
+                    left = mid + 1;
+                }
+            }
 
+            else{
 
-              
-            
+                if(target > nums[mid] && target <= nums[right]){
+                    left = mid + 1;
+                }
+                else{
+                    right = mid - 1;
+                }
             }
         }
 
-
-        
-        
-
-
+        return -1;
     }
 
     public static void main(String[] args) {
 
-        int nums[] = {4,5,6,7,0,1,2}, target = 0;
+        int nums[] = { 4, 5, 6, 7, 0, 1, 2 }, target = 1;
 
-        search(nums, target);
+        System.out.println(search(nums, target));
 
 
-        
     }
 }
