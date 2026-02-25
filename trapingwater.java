@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class trapingwater {
     public static void main(String[] args) {
-        int height[] = {4,2,0,6,3,2,5};
+        int height[] = {0, 1, 0,  2, 1, 0, 1, 3, 2, 1, 2, 1};
         int n = height.length;
         int left_max[] =new int[n];
         int right_max[] =new int[n];
