@@ -1,36 +1,43 @@
-public class spirel {
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+import javax.management.openmbean.ArrayType;
+
+public class spirel2 {
     public static void main(String[] args) {
-    int matrix[][]={{1,2,3,4,5},
-                    {6,7,8,9,10},
-                    {11,12,13,14,15},
-                    {16,17,18,19,20}};
 
-
-
+        int n = 5 ;
+        int matrix[][] = new int[n][n];
+        
                     int startrow = 0;
                     int startcolm=0;
                     int endrow =matrix.length-1;
                     int endcolm = matrix[0].length-1;
+                    int num = 1;
                     
 
                     while(startrow<=endrow && startcolm<=endcolm){
 
                         for (int i = startcolm; i <=endcolm; i++) {
-                            System.out.println(matrix[startrow][i]);
+                            matrix[startrow][i] = num;
+                            num++;
                             
                         }
                         
                         for (int j = startrow+1; j <=endrow; j++) {
-                            System.out.println(matrix[j][endcolm]);
+                            matrix[j][endcolm] = num;
+                             num++;
                             
                         }
                         
                         for (int i = endcolm-1; i >=startcolm; i--) {
-                            System.out.println(matrix[endrow][i]);
+                            matrix[endrow][i] = num;
+                             num++;
                             
                         }
                         for (int j = endrow-1; j >=startrow+1; j--) {
-                            System.out.println(matrix[j][startrow]);
+                            matrix[j][startrow] = num;
+                            num++;
                             
                         }
 
@@ -42,7 +49,13 @@ public class spirel {
 
                        
                     }
-
-
+                    for (int i = 0; i < matrix.length; i++) {
+                        for (int j = 0; j < matrix.length; j++) {
+                            System.out.print(matrix[i][j] + " ");
+                            
+                        }
+                        System.out.println();
+                    }
+        
     }
 }
