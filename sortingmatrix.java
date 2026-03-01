@@ -1,11 +1,9 @@
 public class sortingmatrix {
     public static void main(String[] args) {
         int matrix[][] ={{ 1, 3}};
-
         int target = 3;
         int currJ = matrix[0].length-1;
         int currI =0;
-
                          while (currI<matrix.length && currJ>=0) {
                             if (target==matrix[currI][currJ]) {
 
@@ -19,17 +17,11 @@ public class sortingmatrix {
                             else  {
                                 currJ--;
                                 
-                            }
-
-
-
-                            
-                            
+                            }                         
                          }
+
+
+                         
                          System.out.println("notfound");
-
-
-
-
     }
 }
