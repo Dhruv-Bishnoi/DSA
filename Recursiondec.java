@@ -9,6 +9,20 @@ public class Recursiondec {
         System.out.println(n);
         printdec(n-1);
     }
+    public static void printin(int n ){
+        if (n==1) {
+            System.out.println(n);
+        
+            return ;
+            
+        }
+        printdec(n-1);
+        System.out.println(n);
+    }
+
+   
+        
+    
 
     public static void main(String[] args) {
         int n = 10;
