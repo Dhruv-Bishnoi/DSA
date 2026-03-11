@@ -47,6 +47,7 @@ public class RecFac {
     }
 
 
+
     public static boolean issorted(int arr[],int i) {
         
         if (i==arr.length-1) {
@@ -62,12 +63,62 @@ public class RecFac {
         return issorted(arr, i+1);
     }
 
+    public static int firstoccur(int arr[],int key,int i){
 
-    
+        if(i == arr.length){
+        return -1;
+    }
+
+        if(arr[i] == key){
+            return i;
+         }
+
+
+        return firstoccur(arr, key, i+1);
+
+
+
+
+
+
+    }
+    public static int lastoccur(int arr[],int key,int i){
+
+    if (arr.length==i) {
+        return -1;
+
+    }
+    int found =  lastoccur(arr, key, i+1);
+
+    if (found==-1 && arr[i]==key ) {
+
+        return i;
+        
+    }
+
+  
+    return found;
+
+
+    }
+
+    public static int power(int x, int n ){
+
+        if(n == 0){
+            return 1;
+        }
+
+        int xn = x*power(x, n-1);
+
+        return xn;
+    }
+
+
+          
     public static void main(String[] args) {
-        int arr[]= {1,2,3,4,5,6,9,8};
+        int arr[]= {1,9,3,4,9,8,8};
 
-        System.out.println(issorted(arr, 0));
+        System.out.println(power(2,10));
         
         
     }
