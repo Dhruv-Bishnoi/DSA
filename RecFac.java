@@ -114,11 +114,37 @@ public class RecFac {
     }
 
 
+    public static int optimizepower(int x,int n){
+
+        if (n==0) {
+            return 1;
+            
+        }
+        System.out.println(n + " n");
+        int halfsq = optimizepower(x, n/2);
+        
+        int fullsq = halfsq* halfsq;
+        
+
+        if (n % 2!=0) {
+            System.out.println(fullsq + "before");
+            
+            fullsq = x *fullsq;
+            
+            System.out.println(fullsq + " full sq " + n);
+
+            
+        }
+
+        return fullsq;
+    }
+
+
           
     public static void main(String[] args) {
         int arr[]= {1,9,3,4,9,8,8};
 
-        System.out.println(power(2,10));
+        System.out.println(optimizepower(2,10));
         
         
     }
