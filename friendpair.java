@@ -3,18 +3,22 @@ public class friendpair {
     public static int pair(int n ){
 
         if (n==0||n==2) {
-            return 1;
+            return n;
             
         }
 
 
-          int ways =  pair(n-1) + pair(n-2);
+          int fnm1 = pair(n-1);
+
+          int fmn2 = (n-1)*pair(n-2);
+
+          int ways = fmn2 + fnm1;
+          return ways;
 
 
 
           
 
-         return ways;
 
 
     }
