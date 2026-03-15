@@ -1,4 +1,5 @@
 public class findocc {
+    static String arr[] = {"zero","one","two","three","four","five","six","seven","eight","nine"};
     public static void find(int key ,int arr[],int i ){
 
         if (i>arr.length-1) {
@@ -17,7 +18,7 @@ public class findocc {
     }
 
 
-    public static void intToEng(int i ,String arr[]){
+    public static void intToEng(int i ){
         if (i==0) {
             return
             ;
@@ -26,7 +27,7 @@ public class findocc {
         int lastdigit = i%10;
 
         
-        intToEng(i/10, arr);
+        intToEng(i/10);
         System.out.println(arr[lastdigit]);
         return;
         
@@ -36,9 +37,8 @@ public class findocc {
     public static void main(String[] args){
 
         int  key = 2;
-        String arr[] = {"zero","one","two","three","four","five","six","seven","eight","nine"};
 
-        intToEng(193,arr);
+        intToEng(193);
 
     }
     }
