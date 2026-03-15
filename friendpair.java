@@ -1,30 +1,20 @@
 public class friendpair {
 
-    public static int pair(int n ){
+    public static int pair(int n){
 
-        if (n==0||n==2) {
-            return n;
-            
+        if(n == 0 || n == 1){
+            return 1;
         }
 
+        int single = pair(n-1);
 
-          int fnm1 = pair(n-1);
+        int pair = (n-1) * pair(n-2);
 
-          int fmn2 = (n-1)*pair(n-2);
-
-          int ways = fmn2 + fnm1;
-          return ways;
-
-
-
-          
-
-
-
+        return single + pair;
     }
+
     public static void main(String[] args){
-        System.out.println(pair(4));
-
-
+        System.out.println(pair(3));
     }
+
 }
