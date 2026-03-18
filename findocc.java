@@ -18,6 +18,8 @@ public class findocc {
     }
 
 
+    
+
     public static void intToEng(int i ){
         if (i==0) {
             return
