@@ -13,6 +13,7 @@ public class mergesort {
         // System.out.println(arr[mid] + " " + mid);
         SortUseingMerge(arr, st, mid);
         SortUseingMerge(arr, mid+1, end);
+        merge(arr, st, end, mid);
 
 
 
