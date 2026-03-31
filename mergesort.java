@@ -1,8 +1,10 @@
+import javax.print.DocFlavor.STRING;
+
 public class mergesort {
 
 
 
-    public static void SortUseingMerge(int arr[], int st, int end) {
+    public static void SortUseingMerge(String arr[], int st, int end) {
 
         if (st >= end) return;
 
@@ -15,26 +17,23 @@ public class mergesort {
 
     }
 
-    public static void merge(int arr[] , int st , int end , int mid){
+    public static void merge(String arr[] , int st , int end , int mid){
 
-    int temp[] = new int[(end-st)+1];
+    String temp[] = new String[(end-st)+1];
     int i = st;
      int j = mid+1;
      int k =  0 ;
 
 
 
-    while (i<=mid && j<=end) {
-        
-        if (arr[i]<arr[j]) {
-            temp[k++]=arr[i++];
-            
-        }
-        else{
-
-            temp[k++] = arr[j++];
-        }
+    while (i <= mid && j <= end) {
+    
+    if (arr[i].compareTo(arr[j]) < 0) {
+        temp[k++] = arr[i++];
+    } else {
+        temp[k++] = arr[j++];
     }
+}
 
      while (i <= mid) {
         temp[k++] = arr[i++];
@@ -52,9 +51,9 @@ public class mergesort {
 }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 3, 9, 6, 8, 2, 5 };
+        String arr[] = {"apple","mango","banana","kivi","sheb"};
         SortUseingMerge(arr, 0, arr.length - 1);
-        for(int x : arr){
+        for(String x : arr){
             System.out.print(x + " ");
         }
     }
