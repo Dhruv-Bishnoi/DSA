@@ -146,33 +146,56 @@ public class LinkedList {
 
     }
 
-    public int search(int key ){
 
-        Node temp = Head;
+    public int  helper( Node Head , int key){
 
-        if (temp == null) {
+        if (Head == null) {
 
-            return 0;
+            return -1;
             
         }
 
+        if (Head.data == key) {
+
+            return 0 ;
+            
+        }
+
+        int idx = helper(Head.next, key);
+
+        if (idx == -1) {
+
+            return -1;
+            
+        }
+
+        return idx+1;
+    }
+
+    public int searchbyrecursion(int key){
+
+        return helper(Head, key);
+    }
+    
+    public void search(int key){
+
+        Node temp = Head;
+        int i = 0;
+
+        while (temp != null) {
 
             if (temp.data == key) {
-            
-                return 1;
+                System.out.println(i);
+                return ;
                 
             }
 
-
-
             temp = temp.next;
-            int in = search(key);
-            in++;
-            return in;
+            i++;
+            
+        }
 
-
-        
-
+        System.out.println("not found");
     }
     public static void main(String[] args) {
 
@@ -187,9 +210,7 @@ public class LinkedList {
         ll.printNode();
         ll.removeLast();
         ll.printNode();
-        System.out.println(ll.search(5));
-        System.out.println(ll.search(65));
-        ll.search(65);
+        System.out.println(ll.searchbyrecursion(34));
 
 
 
