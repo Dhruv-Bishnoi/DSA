@@ -219,59 +219,73 @@ public class LinkedList {
 
     }
 
-   
-    public void palindrome() {
-        int half = 0;
-        Node prev = Head;
-        Node curr = prev.next;
-        Node Next = curr.next;
-        if (size % 2 != 0) {
-            half = (size / 2) + 1;
+    public Node Findmid(Node Head) {
+
+        Node slow = Head;
+        Node fast = Head;
+
+        while (fast != null && fast.next != null) {
+
+            slow = slow.next;
+            fast = fast.next.next;
+
         }
-        int j = 1;
-        while (j <= half) {
-            prev = curr;
-            curr = Next;
-            Next = curr.next;
-            j++;
-        }
-         while(curr != null){
-        Node next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
+        System.out.println(slow.data);
+        return slow;
     }
-        Node firstHalf = Head;
-        Node secHalf = prev;
-        for (int i = 1; i < size / 2; i++) {
-            secHalf = secHalf.next;
+
+    public Boolean palindrome() {
+
+        if (Head == null && Head.next == null) {
+
+            return true;
+
         }
-        if (size % 2 != 0) {
-            secHalf = secHalf.next;
+
+        Node mid = Findmid(Head);
+
+        Node prev = null;
+        Node curr = mid;
+        Node next;
+
+        while (curr != null) {
+
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+
         }
-        for (int i = 1; i < size; i++) {
-            if (firstHalf.data != secHalf.data) {
-                System.out.println("not a palindrome");
-                return;
+
+        Node left = Head;
+        Node right = prev;
+
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
             }
+            left = left.next;
+            right = right.next;
         }
-        System.out.println("this is palimdrome");
+
+        return true;
+
     }
 
     public static void main(String[] args) {
 
         LinkedList ll = new LinkedList();
-        ll.Firstadd(34);
         ll.Firstadd(5);
-        ll.Lastadd(54);
-        ll.Lastadd(4);
+        ll.Lastadd(5);
+        ll.Lastadd(7);
        
+
         ll.printNode();
 
         ll.reverse();
         ll.printNode();
         ll.printNode();
-        ll.palindrome();
+        System.out.println(ll.palindrome());
 
     }
 }
