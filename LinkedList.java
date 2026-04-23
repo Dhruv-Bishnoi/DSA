@@ -238,14 +238,26 @@ public class LinkedList {
         Node slow = Head;
         Node fast = Head;
 
-        Boolean sig = false;
+        int i = 1;
+        while (i == size) {
 
-        while (condition) {
+            if (slow.next == fast.next && i <1) {
+                System.out.println("this is cyclic");
+                return slow;
+                
+            }
+            i++;
+            slow = slow.next;
+            fast = fast.next.next;
+
+
             
         }
 
-        return ; 
 
+
+        System.out.println("this is not");
+        return slow;
         
     }
 
@@ -286,6 +298,7 @@ public class LinkedList {
         return true;
 
     }
+    
 
     
 
@@ -306,6 +319,10 @@ public class LinkedList {
         ll.printNode();
         ll.printNode();
         System.out.println(ll.palindrome());
+        ll.cy();
+        ll.detect(Head);
+        System.out.println(size);
+    
 
     }
 }
