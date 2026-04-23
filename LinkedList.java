@@ -233,6 +233,21 @@ public class LinkedList {
         System.out.println(slow.data);
         return slow;
     }
+     public  Node detect(Node Head){
+
+        Node slow = Head;
+        Node fast = Head;
+
+        Boolean sig = false;
+
+        while (condition) {
+            
+        }
+
+        return ; 
+
+        
+    }
 
     public Boolean palindrome() {
 
@@ -281,6 +296,8 @@ public class LinkedList {
         ll.Firstadd(5);
         ll.Lastadd(5);
         ll.Lastadd(7);
+        ll.Lastadd(5);
+        ll.Lastadd(5);
        
 
         ll.printNode();
