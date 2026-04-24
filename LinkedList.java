@@ -233,22 +233,20 @@ public class LinkedList {
         System.out.println(slow.data);
         return slow;
     }
-     public  Node detect(Node Head){
+     public  void detect(Node Head){
 
         Node slow = Head;
         Node fast = Head;
 
-        int i = 1;
-        while (i == size) {
+        while (slow!=null && fast!=null) {
 
-            if (slow.next == fast.next && i <1) {
-                System.out.println("this is cyclic");
-                return slow;
-                
-            }
-            i++;
             slow = slow.next;
             fast = fast.next.next;
+            if (slow ==fast) {
+                System.out.println("this is cyclic");
+                return ;
+                
+            }
 
 
             
@@ -257,7 +255,7 @@ public class LinkedList {
 
 
         System.out.println("this is not");
-        return slow;
+        return ;
         
     }
 
@@ -311,6 +309,7 @@ public class LinkedList {
         ll.Lastadd(7);
         ll.Lastadd(5);
         ll.Lastadd(5);
+        
        
 
         ll.printNode();
@@ -318,8 +317,9 @@ public class LinkedList {
         ll.reverse();
         ll.printNode();
         ll.printNode();
+
+        
         System.out.println(ll.palindrome());
-        ll.cy();
         ll.detect(Head);
         System.out.println(size);
     
