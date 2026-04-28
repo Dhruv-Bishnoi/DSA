@@ -233,30 +233,62 @@ public class LinkedList {
         System.out.println(slow.data);
         return slow;
     }
-     public  void detect(Node Head){
+
+    public static void detect() {
 
         Node slow = Head;
         Node fast = Head;
 
-        while (slow!=null && fast!=null) {
+        while (fast != null && fast.next != null) {
 
             slow = slow.next;
             fast = fast.next.next;
-            if (slow ==fast) {
+            if (slow == fast) {
                 System.out.println("this is cyclic");
-                return ;
-                
+                return;
+
             }
 
-
-            
         }
 
-
-
         System.out.println("this is not");
-        return ;
+        return;
+
+    }
+
+    public static void acycle() {
+
+        Node slow = Head;
+        Node fast = Head;
+        Node prev = fast;
+
+        Boolean cycle = false;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                cycle = true;
+                break ; 
+            }
+        }
+
+        if (cycle == false) {
+
+            return;
+            
+        }
+        slow = Head;
+        while (slow!=fast) {
+            slow = slow.next;
+            prev = fast;
+            fast = fast.next;
+        }
+
+        prev.next = null;
+
         
+
     }
 
     public Boolean palindrome() {
@@ -296,33 +328,22 @@ public class LinkedList {
         return true;
 
     }
-    
 
-    
-
-    
     public static void main(String[] args) {
 
-        LinkedList ll = new LinkedList();
-        ll.Firstadd(5);
-        ll.Lastadd(5);
-        ll.Lastadd(7);
-        ll.Lastadd(5);
-        ll.Lastadd(5);
-        
-       
+        Head = new Node(1);
+        Head.next = new Node(2);
+        Head.next.next = new Node(3);
+        Head.next.next.next =new Node(4);
+        Head.next.next.next.next = Head.next.next;
 
-        ll.printNode();
+        detect();
+        acycle();
+        detect();
 
-        ll.reverse();
-        ll.printNode();
-        ll.printNode();
+
 
         
-        System.out.println(ll.palindrome());
-        ll.detect(Head);
-        System.out.println(size);
-    
 
     }
 }

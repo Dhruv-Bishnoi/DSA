@@ -56,5 +56,8 @@ public class mergesort {
         for(String x : arr){
             System.out.print(x + " ");
         }
+
     }
+
+    
 }
